@@ -1,0 +1,49 @@
+Python Crash Course (3rd Edition) - Chapter 1 Summary
+
+1. What is Python?
+- Python is a high-level, interpreted programming language.
+- It emphasizes readability, simplicity, and fast development.
+- Python is widely used for web development, data science, automation, and scripting.
+
+2. Installing Python
+- The chapter explains how to install Python and verify the installation.
+- It introduces using the Python interpreter and running Python programs from the command line.
+
+  Mac
+  - Download the latest installer from python.org or use Homebrew with `brew install python`.
+  - Run the downloaded `.pkg` installer and follow the prompts.
+  - Open Terminal and verify with `python3 --version`.
+  - Use `python3 filename.py` to run Python programs.
+
+  Windows
+  - Download the installer from python.org and run it.
+  - Check "Add Python to PATH" before clicking Install.
+  - After installation, open Command Prompt and verify with `python --version`.
+  - Use `python filename.py` to run Python programs.
+
+  Linux
+  - Many Linux distros already include Python; verify with `python3 --version`.
+  - If needed, install via package manager:
+    - Ubuntu/Debian: `sudo apt update && sudo apt install python3`
+    - Fedora: `sudo dnf install python3`
+    - Arch: `sudo pacman -S python`
+  - Run programs with `python3 filename.py`.
+
+3. Writing your first program
+- The first simple program prints text with the `print()` function.
+- This chapter also covers using comments to explain code and improve readability.
+
+4. Running Python code
+- You can run Python interactively in the terminal or save code in `.py` files.
+- Python executes statements line by line, making it easy to test ideas.
+
+5. The basics of programming
+- Programming means giving the computer a sequence of instructions.
+- The chapter introduces the concept of a program and the role of variables and expressions.
+
+6. Key takeaways
+- Python is beginner-friendly and powerful for many tasks.
+- Start small, write clear code, and use comments.
+- Practice by running short programs and experimenting with the interpreter.
+
+This note covers the core ideas of Chapter 1 and provides a quick reference for new Python learners.
