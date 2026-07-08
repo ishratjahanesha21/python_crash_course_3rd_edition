@@ -1,0 +1,656 @@
+# Python If, Else & Elif Explained | Python Crash Course Chapter 5
+
+---
+
+Welcome back to the Python Crash Course series.
+
+In the previous chapter, we learned about lists and loops.
+
+Today we're going to learn one of the most important concepts in programming—
+
+**Decision Making using if statements.**
+
+Imagine you're creating:
+
+* a login system
+* an ATM
+* a game
+* an online shopping website
+
+How does the computer decide what should happen next?
+
+That's exactly what **if statements** are for.
+
+By the end of this video you'll understand:
+
+* Conditional Tests
+* Boolean Expressions
+* if statements
+* if-else
+* if-elif-else
+* Multiple Conditions
+* Using if with Lists
+* Common Beginner Mistakes
+
+Let's begin!
+
+---
+
+# Section 1 — What is an if Statement? (1:00)
+
+An **if statement** allows Python to make decisions.
+
+Think about real life.
+
+If it is raining,
+take an umbrella.
+
+If your phone battery is below 20%,
+charge it.
+
+Programming works exactly the same way.
+
+General syntax:
+
+```python
+if condition:
+    # code to execute
+```
+
+Notice the colon.
+
+Also notice the indentation.
+
+Python uses indentation to know which code belongs inside the if statement.
+
+Example:
+
+```python
+age = 20
+
+if age >= 18:
+    print("You can vote.")
+```
+
+Output
+
+```
+You can vote.
+```
+
+Since the condition is True,
+Python executes the code.
+
+---
+
+# Section 2 — Conditional Tests (3:00)
+
+Before Python can make a decision,
+it first checks whether something is True or False.
+
+These are called **conditional tests.**
+
+Example:
+
+```python
+age = 18
+
+print(age == 18)
+```
+
+Output
+
+```
+True
+```
+
+The double equal sign
+
+```python
+==
+```
+
+means
+
+"Is it equal?"
+
+It does NOT assign a value.
+
+Remember
+
+```python
+=
+```
+
+means assignment.
+
+```python
+==
+```
+
+means comparison.
+
+This is one of the most common beginner mistakes.
+
+---
+
+# Equality and Inequality
+
+Equal
+
+```python
+name == "Alice"
+```
+
+Not Equal
+
+```python
+name != "Alice"
+```
+
+Example
+
+```python
+name = "Bob"
+
+print(name != "Alice")
+```
+
+Output
+
+```
+True
+```
+
+---
+
+# Comparing Numbers
+
+You can compare numbers using
+
+Greater Than
+
+```python
+>
+```
+
+Less Than
+
+```python
+<
+```
+
+Greater or Equal
+
+```python
+>=
+```
+
+Less or Equal
+
+```python
+<=
+```
+
+Example
+
+```python
+score = 85
+
+print(score > 50)
+```
+
+Output
+
+```
+True
+```
+
+---
+
+# Section 3 — Multiple Conditions (7:00)
+
+Sometimes one condition isn't enough.
+
+Python gives us
+
+## and
+
+Both conditions must be True.
+
+Example
+
+```python
+age = 25
+has_license = True
+
+if age >= 18 and has_license:
+    print("You can drive.")
+```
+
+Both are True.
+
+So Python prints the message.
+
+---
+
+## or
+
+Only one condition needs to be True.
+
+Example
+
+```python
+day = "Saturday"
+
+if day == "Saturday" or day == "Sunday":
+    print("Weekend!")
+```
+
+Output
+
+```
+Weekend!
+```
+
+---
+
+# Section 4 — Checking Items Inside a List (9:30)
+
+You can check whether an item exists inside a list.
+
+Example
+
+```python
+fruits = ["apple", "banana", "orange"]
+
+print("banana" in fruits)
+```
+
+Output
+
+```
+True
+```
+
+Not in
+
+```python
+print("grape" not in fruits)
+```
+
+Output
+
+```
+True
+```
+
+Very useful when validating data.
+
+---
+
+# Section 5 — Boolean Values (11:30)
+
+Python has two Boolean values.
+
+```python
+True
+False
+```
+
+Notice the capital letters.
+
+Example
+
+```python
+is_logged_in = True
+
+if is_logged_in:
+    print("Welcome back!")
+```
+
+Output
+
+```
+Welcome back!
+```
+
+---
+
+# Section 6 — Simple if Statement (13:00)
+
+The simplest form.
+
+```python
+temperature = 35
+
+if temperature > 30:
+    print("It's hot today.")
+```
+
+Only one condition.
+
+Only one action.
+
+---
+
+# Section 7 — if else (14:30)
+
+Sometimes there are only two possibilities.
+
+Example
+
+```python
+age = 16
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+```
+
+Output
+
+```
+Minor
+```
+
+If the first condition is False,
+Python automatically executes the else block.
+
+---
+
+# Section 8 — if elif else (16:30)
+
+What if there are multiple possibilities?
+
+Example
+
+```python
+score = 82
+
+if score >= 90:
+    print("Grade A")
+elif score >= 80:
+    print("Grade B")
+elif score >= 70:
+    print("Grade C")
+else:
+    print("Need Improvement")
+```
+
+Python checks from top to bottom.
+
+As soon as one condition becomes True,
+
+it stops checking the rest.
+
+This is very important.
+
+---
+
+# Section 9 — Multiple Independent if Statements (19:00)
+
+Sometimes you don't want Python to stop.
+
+Example
+
+```python
+age = 25
+
+if age >= 18:
+    print("Adult")
+
+if age >= 21:
+    print("Can enter club")
+```
+
+Output
+
+```
+Adult
+Can enter club
+```
+
+Since these are separate if statements,
+
+both conditions are checked.
+
+---
+
+# Section 10 — Using if with Lists (21:00)
+
+Suppose we have
+
+```python
+requested_toppings = [
+    "mushrooms",
+    "cheese",
+    "pepperoni"
+]
+```
+
+Loop through them.
+
+```python
+for topping in requested_toppings:
+
+    if topping == "cheese":
+        print("Adding extra cheese.")
+
+    else:
+        print(f"Adding {topping}.")
+```
+
+This combines loops and conditions.
+
+You'll use this technique constantly in real projects.
+
+---
+
+# Section 11 — Empty Lists (24:00)
+
+Sometimes a list has no items.
+
+Instead of checking the length,
+
+Python lets us do this.
+
+```python
+users = []
+
+if users:
+    print("Users found.")
+else:
+    print("No users available.")
+```
+
+Very clean.
+
+Very Pythonic.
+
+---
+
+# Section 12 — Multiple Lists (25:30)
+
+Example
+
+```python
+available = ["apple", "banana", "orange"]
+
+requested = ["banana", "grape"]
+
+for item in requested:
+
+    if item in available:
+        print(f"{item} is available.")
+
+    else:
+        print(f"{item} is unavailable.")
+```
+
+This is commonly used in
+
+shopping carts,
+
+inventory systems,
+
+and databases.
+
+---
+
+# Section 13 — Common Beginner Mistakes (28:00)
+
+Mistake 1
+
+Using
+
+```python
+=
+```
+
+instead of
+
+```python
+==
+```
+
+Wrong
+
+```python
+if age = 18:
+```
+
+Correct
+
+```python
+if age == 18:
+```
+
+---
+
+Mistake 2
+
+Wrong indentation
+
+Python requires indentation.
+
+---
+
+Mistake 3
+
+Forgetting the colon
+
+Wrong
+
+```python
+if age > 18
+```
+
+Correct
+
+```python
+if age > 18:
+```
+
+---
+
+Mistake 4
+
+Using many if statements instead of elif.
+
+If only one condition should run,
+
+use
+
+```python
+if
+elif
+else
+```
+
+---
+
+# Mini Practice (31:00)
+
+Pause the video and solve these.
+
+Question 1
+
+If age is 15,
+
+print
+
+```
+Teenager
+```
+
+otherwise
+
+```
+Adult
+```
+
+---
+
+Question 2
+
+Check whether
+
+```
+Python
+```
+
+exists inside a list of programming languages.
+
+---
+
+Question 3
+
+Create a grading system using
+
+if
+
+elif
+
+else
+
+---
+
+# Summary (33:00)
+
+Today we learned
+
+✔ Conditional Tests
+
+✔ Comparison Operators
+
+✔ Boolean Values
+
+✔ if Statement
+
+✔ if else
+
+✔ if elif else
+
+✔ Multiple Conditions
+
+✔ and
+
+✔ or
+
+✔ in
+
+✔ not in
+
+✔ if Statements with Lists
+
+✔ Common Mistakes
+
+These concepts are the foundation of almost every Python program you'll ever write.
+
+In the next chapter, we'll explore **Dictionaries**, where we'll learn how to store data using key-value pairs.
+
+If you found this video helpful, don't forget to Like, Subscribe, and turn on notifications so you never miss the next lesson.
+
+Thank you for watching, and I'll see you in the next video.
